@@ -56,7 +56,7 @@ class BatchRetrieveCatalogObjectsResponse extends SquareResponse {
       _$BatchRetrieveCatalogObjectsResponseToJson(this);
 
   final List<CatalogObject> objects;
-  final List<CatalogObject> relatedObjects;
+  final List<CatalogObject>? relatedObjects;
 
   @override
   List<Object?> get props => [

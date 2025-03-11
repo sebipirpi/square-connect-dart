@@ -21,7 +21,7 @@ class RetrieveCatalogObjectResponse extends SquareResponse {
   Map<String, dynamic> toJson() => _$RetrieveCatalogObjectResponseToJson(this);
 
   final CatalogObject object;
-  final List<CatalogObject> relatedObjects;
+  final List<CatalogObject>? relatedObjects;
 
   @override
   List<Object?> get props => [

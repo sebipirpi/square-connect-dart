@@ -10,8 +10,8 @@ RetrieveCatalogObjectResponse _$RetrieveCatalogObjectResponseFromJson(
         Map<String, dynamic> json) =>
     RetrieveCatalogObjectResponse(
       object: CatalogObject.fromJson(json['object'] as Map<String, dynamic>),
-      relatedObjects: (json['related_objects'] as List<dynamic>)
-          .map((e) => CatalogObject.fromJson(e as Map<String, dynamic>))
+      relatedObjects: (json['related_objects'] as List<dynamic>?)
+          ?.map((e) => CatalogObject.fromJson(e as Map<String, dynamic>))
           .toList(),
       errors: (json['errors'] as List<dynamic>?)
           ?.map((e) => SquareError.fromJson(e as Map<String, dynamic>))
@@ -30,7 +30,7 @@ Map<String, dynamic> _$RetrieveCatalogObjectResponseToJson(
 
   writeNotNull('errors', instance.errors?.map((e) => e.toJson()).toList());
   val['object'] = instance.object.toJson();
-  val['related_objects'] =
-      instance.relatedObjects.map((e) => e.toJson()).toList();
+  writeNotNull('related_objects',
+      instance.relatedObjects?.map((e) => e.toJson()).toList());
   return val;
 }

@@ -41,8 +41,8 @@ BatchRetrieveCatalogObjectsResponse
           objects: (json['objects'] as List<dynamic>)
               .map((e) => CatalogObject.fromJson(e as Map<String, dynamic>))
               .toList(),
-          relatedObjects: (json['related_objects'] as List<dynamic>)
-              .map((e) => CatalogObject.fromJson(e as Map<String, dynamic>))
+          relatedObjects: (json['related_objects'] as List<dynamic>?) 
+              ?.map((e) => CatalogObject.fromJson(e as Map<String, dynamic>))
               .toList(),
           errors: (json['errors'] as List<dynamic>?)
               ?.map((e) => SquareError.fromJson(e as Map<String, dynamic>))
@@ -61,7 +61,7 @@ Map<String, dynamic> _$BatchRetrieveCatalogObjectsResponseToJson(
 
   writeNotNull('errors', instance.errors?.map((e) => e.toJson()).toList());
   val['objects'] = instance.objects.map((e) => e.toJson()).toList();
-  val['related_objects'] =
-      instance.relatedObjects.map((e) => e.toJson()).toList();
+  writeNotNull('related_objects',
+      instance.relatedObjects?.map((e) => e.toJson()).toList());
   return val;
 }
