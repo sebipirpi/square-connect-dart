@@ -41,7 +41,7 @@ BatchRetrieveCatalogObjectsResponse
           objects: (json['objects'] as List<dynamic>)
               .map((e) => CatalogObject.fromJson(e as Map<String, dynamic>))
               .toList(),
-          relatedObjects: (json['related_objects'] as List<dynamic>?) 
+          relatedObjects: (json['related_objects'] as List<dynamic>?)
               ?.map((e) => CatalogObject.fromJson(e as Map<String, dynamic>))
               .toList(),
           errors: (json['errors'] as List<dynamic>?)
