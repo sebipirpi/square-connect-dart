@@ -1,24 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'list_locations.dart';
+part of 'retrieve_inventory_counts.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ListLocationsResponse _$ListLocationsResponseFromJson(
+RetrieveInventoryCountsResponse _$RetrieveInventoryCountsResponseFromJson(
         Map<String, dynamic> json) =>
-    ListLocationsResponse(
-      locations: (json['locations'] as List<dynamic>?)
-          ?.map((e) => Location.fromJson(e as Map<String, dynamic>))
+    RetrieveInventoryCountsResponse(
+      counts: (json['counts'] as List<dynamic>?)
+          ?.map((e) => InventoryCount.fromJson(e as Map<String, dynamic>))
           .toList(),
+      cursor: json['cursor'] as String?,
       errors: (json['errors'] as List<dynamic>?)
           ?.map((e) => SquareError.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$ListLocationsResponseToJson(
-    ListLocationsResponse instance) {
+Map<String, dynamic> _$RetrieveInventoryCountsResponseToJson(
+    RetrieveInventoryCountsResponse instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -28,6 +29,8 @@ Map<String, dynamic> _$ListLocationsResponseToJson(
   }
 
   writeNotNull('errors', instance.errors?.map((e) => e.toJson()).toList());
-  val['locations'] = instance.locations?.map((e) => e.toJson()).toList();
+  writeNotNull('counts', instance.counts?.map((e) => e.toJson()).toList());
+  writeNotNull('cursor', instance.cursor);
+
   return val;
 }

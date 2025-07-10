@@ -119,6 +119,18 @@ abstract class SquareApiClient {
     @Body() required SearchCatalogRequest body,
   });
 
+  @GET('/v2/inventory/{catalog_object_id}')
+  Future<RetrieveInventoryCountsResponse> retrieveInventoryCounts({
+    @Path() required String catalogObjectId,
+    @Query('location_ids') String? locationIds,
+    @Query('cursor') String? cursor,
+  });
+
+  @POST('/v2/inventory/counts/batch-retrieve')
+  Future<BatchRetrieveInventoryCountsResponse> batchRetrieveInventoryCounts({
+    @Body() required BatchRetrieveInventoryCountsRequest body,
+  });
+
   /// Retrieves an `Order` by ID.
   @GET('/v2/orders/{orderId}')
   Future<RetrieveOrderResponse> retrieveOrder({
@@ -681,5 +693,10 @@ abstract class SquareApiClient {
   @GET('/v2/customers/segments/{segmentId}')
   Future<RetrieveCustomerSegmentResponse> retrieveCustomerSegment({
     @Path() required String segmentId,
+  });
+
+  @POST('/v2/refunds')
+  Future<RefundPaymentResponse> refundPayment({
+    @Body() required RefundPaymentRequest body,
   });
 }

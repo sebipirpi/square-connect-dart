@@ -11,6 +11,7 @@ class ObtainTokenRequest extends Equatable {
     required this.clientSecret,
     required this.grantType,
     this.code,
+    this.codeVerifier,
     this.redirectUri,
     this.refreshToken,
     this.migrationToken,
@@ -28,6 +29,7 @@ class ObtainTokenRequest extends Equatable {
   final String clientId;
   final String clientSecret;
   final String? code;
+  final String? codeVerifier;
   final String? redirectUri;
   final OAuthGrantType grantType;
   final String? refreshToken;
@@ -41,6 +43,7 @@ class ObtainTokenRequest extends Equatable {
       clientId,
       clientSecret,
       code,
+      codeVerifier,
       redirectUri,
       grantType,
       refreshToken,

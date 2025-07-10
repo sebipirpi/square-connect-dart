@@ -11,10 +11,11 @@ InventoryCount _$InventoryCountFromJson(Map<String, dynamic> json) =>
       catalogObjectId: json['catalog_object_id'] as String?,
       catalogObjectType: $enumDecodeNullable(
           _$CatalogObjectTypeEnumMap, json['catalog_object_type']),
-      inventoryState:
-          $enumDecodeNullable(_$InventoryStateEnumMap, json['inventory_state']),
+      state: $enumDecodeNullable(_$InventoryStateEnumMap, json['state']),
       locationId: json['location_id'] as String?,
-      quantity: (json['quantity'] as num?)?.toDouble(),
+      quantity: json['quantity'] == null
+          ? null
+          : int.tryParse(json['quantity'] as String),
       calculatedAt: json['calculated_at'] == null
           ? null
           : DateTime.parse(json['calculated_at'] as String),
@@ -33,9 +34,9 @@ Map<String, dynamic> _$InventoryCountToJson(InventoryCount instance) {
   writeNotNull('catalog_object_type',
       _$CatalogObjectTypeEnumMap[instance.catalogObjectType]);
   writeNotNull(
-      'inventory_state', _$InventoryStateEnumMap[instance.inventoryState]);
+      'state', _$InventoryStateEnumMap[instance.state]);
   writeNotNull('location_id', instance.locationId);
-  writeNotNull('quantity', instance.quantity);
+  writeNotNull('quantity', instance.quantity?.toString());
   writeNotNull('calculated_at', instance.calculatedAt?.toIso8601String());
   return val;
 }

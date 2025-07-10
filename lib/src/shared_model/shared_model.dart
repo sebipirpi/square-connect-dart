@@ -75,6 +75,8 @@ export 'customer_tax_ids.dart';
 export 'customer_text_filter.dart';
 export 'date_range.dart';
 export 'day_of_week.dart';
+export 'destination_details_cash_refund_details.dart';
+export 'destination_details_external_refund_details.dart';
 export 'device_details.dart';
 export 'discount_target_scope_type.dart';
 export 'employee.dart';

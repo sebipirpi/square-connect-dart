@@ -12,6 +12,7 @@ ObtainTokenRequest _$ObtainTokenRequestFromJson(Map<String, dynamic> json) =>
       clientSecret: json['client_secret'] as String,
       grantType: $enumDecode(_$OAuthGrantTypeEnumMap, json['grant_type']),
       code: json['code'] as String?,
+      codeVerifier: json['code_verifier'] as String?,
       redirectUri: json['redirect_uri'] as String?,
       refreshToken: json['refresh_token'] as String?,
       migrationToken: json['migration_token'] as String?,
@@ -34,6 +35,7 @@ Map<String, dynamic> _$ObtainTokenRequestToJson(ObtainTokenRequest instance) {
   }
 
   writeNotNull('code', instance.code);
+  writeNotNull('code_verifier', instance.codeVerifier);
   writeNotNull('redirect_uri', instance.redirectUri);
   val['grant_type'] = _$OAuthGrantTypeEnumMap[instance.grantType]!;
   writeNotNull('refresh_token', instance.refreshToken);

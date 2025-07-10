@@ -21,7 +21,7 @@ class ListLocationsResponse extends SquareResponse {
   /// Converts a [ListLocationsResponse] to a [Map]
   Map<String, dynamic> toJson() => _$ListLocationsResponseToJson(this);
 
-  final List<Location> locations;
+  final List<Location>? locations;
 
   @override
   List<Object?> get props => [locations, errors];

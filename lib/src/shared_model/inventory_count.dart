@@ -9,7 +9,7 @@ class InventoryCount extends Equatable {
   const InventoryCount({
     this.catalogObjectId,
     this.catalogObjectType,
-    this.inventoryState,
+    this.state,
     this.locationId,
     this.quantity,
     this.calculatedAt,
@@ -24,9 +24,9 @@ class InventoryCount extends Equatable {
 
   final String? catalogObjectId;
   final CatalogObjectType? catalogObjectType;
-  final InventoryState? inventoryState;
+  final InventoryState? state;
   final String? locationId;
-  final double? quantity;
+  final int? quantity;
   final DateTime? calculatedAt;
 
   @override
@@ -34,7 +34,7 @@ class InventoryCount extends Equatable {
     return [
       catalogObjectId,
       catalogObjectType,
-      inventoryState,
+      state,
       locationId,
       quantity,
       calculatedAt,

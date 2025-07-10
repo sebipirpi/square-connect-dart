@@ -407,6 +407,70 @@ class _SquareApiClient implements SquareApiClient {
   }
 
   @override
+  Future<RetrieveInventoryCountsResponse> retrieveInventoryCounts({
+    required String catalogObjectId,
+    String? locationIds,
+    String? cursor,
+  }) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'location_ids': locationIds,
+      r'cursor': cursor,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<RetrieveInventoryCountsResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/v2/inventory/{catalog_object_id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = RetrieveInventoryCountsResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<BatchRetrieveInventoryCountsResponse> batchRetrieveInventoryCounts(
+      {required BatchRetrieveInventoryCountsRequest body}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<BatchRetrieveInventoryCountsResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/v2/inventory/counts/batch-retrieve',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = BatchRetrieveInventoryCountsResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<RetrieveOrderResponse> retrieveOrder({required String orderId}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -2473,6 +2537,35 @@ class _SquareApiClient implements SquareApiClient {
               baseUrl,
             ))));
     final value = RetrieveCustomerSegmentResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<RefundPaymentResponse> refundPayment(
+      {required RefundPaymentRequest body}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<RefundPaymentResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/v2/refunds',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = RefundPaymentResponse.fromJson(_result.data!);
     return value;
   }
 
