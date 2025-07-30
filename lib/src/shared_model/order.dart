@@ -37,6 +37,7 @@ class Order extends Equatable {
     this.pricingOptions,
     this.rewards,
     this.ticketName,
+    this.note,
   });
 
   /// Converts a [Map] to an [Order]
@@ -219,6 +220,9 @@ class Order extends Equatable {
   /// **Read only** The net amount of money due on the order.
   final Money? netAmountDueMoney;
 
+  /// An optional note associated with the line item.
+  final String? note;
+
   @override
   List<Object?> get props {
     return [
@@ -252,6 +256,7 @@ class Order extends Equatable {
       ticketName,
       pricingOptions,
       netAmountDueMoney,
+      note,
     ];
   }
 }

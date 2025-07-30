@@ -91,6 +91,7 @@ Order _$OrderFromJson(Map<String, dynamic> json) => Order(
           ?.map((e) => OrderReward.fromJson(e as Map<String, dynamic>))
           .toList(),
       ticketName: json['ticket_name'] as String?,
+      note: json['note'] as String?,
     );
 
 Map<String, dynamic> _$OrderToJson(Order instance) {
@@ -137,6 +138,7 @@ Map<String, dynamic> _$OrderToJson(Order instance) {
   writeNotNull('pricing_options', instance.pricingOptions?.toJson());
   writeNotNull('rewards', instance.rewards?.map((e) => e.toJson()).toList());
   writeNotNull('net_amount_due_money', instance.netAmountDueMoney?.toJson());
+  writeNotNull('note', instance.note);
   return val;
 }
 

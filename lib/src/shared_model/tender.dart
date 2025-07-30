@@ -22,6 +22,7 @@ class Tender extends Equatable {
     this.cardDetails,
     this.cashDetails,
     this.additionalRecipients,
+    this.paymentId,
   });
 
   /// Converts a [Map] to an [Tender]
@@ -42,6 +43,7 @@ class Tender extends Equatable {
   final TenderCardDetails? cardDetails;
   final TenderCashDetails? cashDetails;
   final List<AdditionalRecipient>? additionalRecipients;
+  final String? paymentId;
   final TenderType type;
 
   @override
@@ -59,6 +61,7 @@ class Tender extends Equatable {
       cardDetails,
       cashDetails,
       additionalRecipients,
+      paymentId,
       type,
     ];
   }

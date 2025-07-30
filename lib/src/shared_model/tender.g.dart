@@ -37,6 +37,7 @@ Tender _$TenderFromJson(Map<String, dynamic> json) => Tender(
       additionalRecipients: (json['additional_recipients'] as List<dynamic>?)
           ?.map((e) => AdditionalRecipient.fromJson(e as Map<String, dynamic>))
           .toList(),
+      paymentId: json['payment_id'] as String?,
     );
 
 Map<String, dynamic> _$TenderToJson(Tender instance) {
@@ -61,6 +62,7 @@ Map<String, dynamic> _$TenderToJson(Tender instance) {
   writeNotNull('cash_details', instance.cashDetails?.toJson());
   writeNotNull('additional_recipients',
       instance.additionalRecipients?.map((e) => e.toJson()).toList());
+  writeNotNull('payment_id', instance.paymentId);
   val['type'] = _$TenderTypeEnumMap[instance.type]!;
   return val;
 }
