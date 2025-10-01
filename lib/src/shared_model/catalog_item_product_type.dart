@@ -13,4 +13,16 @@ enum CatalogItemProductType {
   retailItem,
   @JsonValue('RESTAURANT_ITEM')
   restaurantItem,
+  @JsonValue('DIGITAL')
+  digital,
+  @JsonValue('DONATION')
+  donation,
+  @JsonValue('EVENT')
+  event,
+  @JsonValue('FOOD_AND_BEV')
+  foodAndBev,
+  @JsonValue('LEGACY_SQUARE_ONLINE_SERVICE')
+  legacySquareOnlineService,
+  @JsonValue('LEGACY_SQUARE_ONLINE_MEMBERSHIP')
+  legacySquareOnlineMembership,
 }
