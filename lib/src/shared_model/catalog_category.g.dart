@@ -12,6 +12,9 @@ CatalogCategory _$CatalogCategoryFromJson(Map<String, dynamic> json) =>
       imageIds: (json['image_ids'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      channels: (json['channels'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$CatalogCategoryToJson(CatalogCategory instance) {
@@ -25,5 +28,6 @@ Map<String, dynamic> _$CatalogCategoryToJson(CatalogCategory instance) {
 
   writeNotNull('name', instance.name);
   writeNotNull('image_ids', instance.imageIds);
+  writeNotNull('channels', instance.channels);
   return val;
 }
