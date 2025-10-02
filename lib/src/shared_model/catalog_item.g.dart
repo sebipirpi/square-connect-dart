@@ -75,4 +75,10 @@ const _$CatalogItemProductTypeEnumMap = {
   CatalogItemProductType.appointmentsService: 'APPOINTMENTS_SERVICE',
   CatalogItemProductType.retailItem: 'RETAIL_ITEM',
   CatalogItemProductType.restaurantItem: 'RESTAURANT_ITEM',
+  CatalogItemProductType.digital: 'DIGITAL',
+  CatalogItemProductType.donation: 'DONATION',
+  CatalogItemProductType.event: 'EVENT',
+  CatalogItemProductType.foodAndBev: 'FOOD_AND_BEV',
+  CatalogItemProductType.legacySquareOnlineService: 'LEGACY_SQUARE_ONLINE_SERVICE',
+  CatalogItemProductType.legacySquareOnlineMembership: 'LEGACY_SQUARE_ONLINE_MEMBERSHIP',
 };
