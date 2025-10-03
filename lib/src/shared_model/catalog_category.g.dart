@@ -16,6 +16,7 @@ CatalogCategory _$CatalogCategoryFromJson(Map<String, dynamic> json) =>
           ?.map((e) => e as String)
           .toList(),
       isTopLevel: json['is_top_level'] as bool?,
+      rootCategory: json['root_category'] as String?,
     );
 
 Map<String, dynamic> _$CatalogCategoryToJson(CatalogCategory instance) {
@@ -31,5 +32,6 @@ Map<String, dynamic> _$CatalogCategoryToJson(CatalogCategory instance) {
   writeNotNull('image_ids', instance.imageIds);
   writeNotNull('channels', instance.channels);
   writeNotNull('is_top_level', instance.isTopLevel);
+  writeNotNull('root_category', instance.rootCategory);
   return val;
 }
