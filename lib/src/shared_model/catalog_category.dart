@@ -9,6 +9,7 @@ class CatalogCategory extends Equatable {
     this.name,
     this.imageIds,
     this.channels,
+    this.isTopLevel,
   });
 
   /// Converts a [Map] to an [CatalogCategory]
@@ -21,11 +22,13 @@ class CatalogCategory extends Equatable {
   final String? name;
   final List<String>? imageIds;
   final List<String>? channels;
+  final bool? isTopLevel;
 
   @override
   List<Object?> get props => [
         name,
         imageIds,
         channels,
+        isTopLevel,
       ];
 }
