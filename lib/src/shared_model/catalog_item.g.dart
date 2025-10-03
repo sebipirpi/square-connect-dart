@@ -35,6 +35,7 @@ CatalogItem _$CatalogItemFromJson(Map<String, dynamic> json) => CatalogItem(
       imageIds: (json['image_ids'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      ecomAvailable: json['ecom_available'] as bool?,
     );
 
 Map<String, dynamic> _$CatalogItemToJson(CatalogItem instance) {
@@ -66,6 +67,7 @@ Map<String, dynamic> _$CatalogItemToJson(CatalogItem instance) {
       'item_options', instance.itemOptions?.map((e) => e.toJson()).toList());
   writeNotNull('sort_name', instance.sortName);
   writeNotNull('image_ids', instance.imageIds);
+  writeNotNull('ecom_available', instance.ecomAvailable);
   return val;
 }
 
@@ -79,6 +81,8 @@ const _$CatalogItemProductTypeEnumMap = {
   CatalogItemProductType.donation: 'DONATION',
   CatalogItemProductType.event: 'EVENT',
   CatalogItemProductType.foodAndBev: 'FOOD_AND_BEV',
-  CatalogItemProductType.legacySquareOnlineService: 'LEGACY_SQUARE_ONLINE_SERVICE',
-  CatalogItemProductType.legacySquareOnlineMembership: 'LEGACY_SQUARE_ONLINE_MEMBERSHIP',
+  CatalogItemProductType.legacySquareOnlineService:
+      'LEGACY_SQUARE_ONLINE_SERVICE',
+  CatalogItemProductType.legacySquareOnlineMembership:
+      'LEGACY_SQUARE_ONLINE_MEMBERSHIP',
 };

@@ -48,6 +48,7 @@ class CatalogItem extends Equatable {
   final List<CatalogItemOptionForItem>? itemOptions;
   final String? sortName;
   final List<String>? imageIds;
+  final bool? ecomAvailable;
 
   @override
   List<Object?> get props {
@@ -68,6 +69,7 @@ class CatalogItem extends Equatable {
       itemOptions,
       sortName,
       imageIds,
+      ecomAvailable,
     ];
   }
 }
