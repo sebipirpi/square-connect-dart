@@ -23,6 +23,7 @@ class CatalogItem extends Equatable {
     this.itemOptions,
     this.sortName,
     this.imageIds,
+    this.ecomAvailable,
   });
 
   /// Converts a [Map] to an [CatalogItem]
