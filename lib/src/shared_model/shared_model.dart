@@ -79,6 +79,7 @@ export 'destination_details_cash_refund_details.dart';
 export 'destination_details_external_refund_details.dart';
 export 'device_details.dart';
 export 'discount_target_scope_type.dart';
+  export 'ecom_visibility.dart';
 export 'employee.dart';
 export 'employee_status.dart';
 export 'employee_wage.dart';

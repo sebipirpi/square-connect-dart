@@ -24,6 +24,7 @@ class CatalogItem extends Equatable {
     this.sortName,
     this.imageIds,
     this.ecomAvailable,
+    this.ecomVisibility,
   });
 
   /// Converts a [Map] to an [CatalogItem]
@@ -50,6 +51,7 @@ class CatalogItem extends Equatable {
   final String? sortName;
   final List<String>? imageIds;
   final bool? ecomAvailable;
+  final EcomVisibility? ecomVisibility;
 
   @override
   List<Object?> get props {
@@ -71,6 +73,7 @@ class CatalogItem extends Equatable {
       sortName,
       imageIds,
       ecomAvailable,
+      ecomVisibility,
     ];
   }
 }

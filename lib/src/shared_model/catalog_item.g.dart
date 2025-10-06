@@ -36,6 +36,8 @@ CatalogItem _$CatalogItemFromJson(Map<String, dynamic> json) => CatalogItem(
           ?.map((e) => e as String)
           .toList(),
       ecomAvailable: json['ecom_available'] as bool?,
+      ecomVisibility:
+          $enumDecodeNullable(_$EcomVisibilityEnumMap, json['ecom_visibility']),
     );
 
 Map<String, dynamic> _$CatalogItemToJson(CatalogItem instance) {
@@ -68,6 +70,8 @@ Map<String, dynamic> _$CatalogItemToJson(CatalogItem instance) {
   writeNotNull('sort_name', instance.sortName);
   writeNotNull('image_ids', instance.imageIds);
   writeNotNull('ecom_available', instance.ecomAvailable);
+  writeNotNull(
+      'ecom_visibility', _$EcomVisibilityEnumMap[instance.ecomVisibility]);
   return val;
 }
 
@@ -85,4 +89,11 @@ const _$CatalogItemProductTypeEnumMap = {
       'LEGACY_SQUARE_ONLINE_SERVICE',
   CatalogItemProductType.legacySquareOnlineMembership:
       'LEGACY_SQUARE_ONLINE_MEMBERSHIP',
+};
+
+const _$EcomVisibilityEnumMap = {
+  EcomVisibility.unindexed: 'UNINDEXED',
+  EcomVisibility.unavailable: 'UNAVAILABLE',
+  EcomVisibility.hidden: 'HIDDEN',
+  EcomVisibility.visible: 'VISIBLE',
 };
