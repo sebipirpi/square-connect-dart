@@ -13,7 +13,7 @@ CatalogItemVariation _$CatalogItemVariationFromJson(
       name: json['name'] as String?,
       sku: json['sku'] as String?,
       upc: json['upc'] as String?,
-      ordinal: json['ordinal'] as int?,
+      ordinal: (json['ordinal'] as num?)?.toInt(),
       pricingType: $enumDecodeNullable(
           _$CatalogPricingTypeEnumMap, json['pricing_type']),
       priceMoney: json['price_money'] == null
@@ -26,15 +26,17 @@ CatalogItemVariation _$CatalogItemVariationFromJson(
       trackInventory: json['track_inventory'] as bool?,
       inventoryAlertType: $enumDecodeNullable(
           _$InventoryAlertTypeEnumMap, json['inventory_alert_type']),
-      inventoryAlertThreshold: json['inventory_alert_threshold'] as int?,
+      inventoryAlertThreshold:
+          (json['inventory_alert_threshold'] as num?)?.toInt(),
       userData: json['user_data'] as String?,
-      serviceDuration: json['service_duration'] as int?,
+      serviceDuration: (json['service_duration'] as num?)?.toInt(),
       measurementUnitId: json['measurement_unit_id'] as String?,
       availableForBooking: json['available_for_booking'] as bool?,
       itemOptionValues: (json['item_option_values'] as List<dynamic>?)
           ?.map((e) => CatalogItemOptionValueForItemVariation.fromJson(
               e as Map<String, dynamic>))
           .toList(),
+      sellable: json['sellable'] as bool?,
       stockable: json['stockable'] as bool?,
       stockableConversion: json['stockable_conversion'] == null
           ? null
@@ -78,6 +80,7 @@ Map<String, dynamic> _$CatalogItemVariationToJson(
   writeNotNull('available_for_booking', instance.availableForBooking);
   writeNotNull('item_option_values',
       instance.itemOptionValues?.map((e) => e.toJson()).toList());
+  writeNotNull('sellable', instance.sellable);
   writeNotNull('stockable', instance.stockable);
   writeNotNull('stockable_conversion', instance.stockableConversion?.toJson());
   writeNotNull('team_member_ids', instance.teamMemberIds);
